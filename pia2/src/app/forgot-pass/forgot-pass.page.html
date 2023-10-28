@@ -1,0 +1,22 @@
+
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title class="title">
+      Ingresa tu correo electronico
+      <p class="subtitle">Para recibir un cambio de contraseña</p>
+    </ion-title>
+  </div>
+
+ 
+    <ion-item class="ion-margin">
+      <ion-input placeholder="Email" type="email" [(ngModel)]="email" name="email" clearInput="true"></ion-input>
+    </ion-item>
+    <div align="center">
+      <ion-button shape="round" strong="true" class="ion-margin-end" color="plant" type="submit" >
+        ENVIAR
+        <ion-icon name="log-in" slot="end"></ion-icon>
+
+      </ion-button>
+    </div>
+  
+</ion-content>

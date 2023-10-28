@@ -1,0 +1,33 @@
+
+
+<!--ion-content [fullscreen]="true">
+  <div class="container">
+
+    <ion-img src="assets/img.png"/>
+    <ion-title>
+      <p style="text-align:center">Hello!</p>
+      <p style="text-align:center">Take a breath and listen </p>
+      <p style="text-align:center"> to your favorite music</p>
+    </ion-title>
+  </div>
+
+  
+  <ion-fab vertical="bottom" horizontal="end" style="margin-bottom:30px;">
+    <ion-fab-button [routerLink]="('/login')">
+      <ion-icon name="checkvron-forward"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+ 
+    <ion-button>Get Started</ion-button>
+</ion-content-->
+
+<ion-content >
+  <ion-list class="ion-margin ion-text-center">
+    <ion-list-header><ion-label color="#08D033">  TEMPO TUNES </ion-label></ion-list-header>
+    <!--ion-button expand="block" color="#0000"  shape="round "  [routerLink]="('/login')">Login</ion-button-->
+    <ion-button expand="block" color="success" shape="round" [routerLink]="('/login')">Login</ion-button>
+
+    <!--ion-button color="white" expand="block" shape="round">Login with Google</ion-button-->
+    <ion-text color="white"><p>New User? <a [routerLink]="['/register']"> Sign up.</a></p> </ion-text>
+  </ion-list>
+</ion-content>
