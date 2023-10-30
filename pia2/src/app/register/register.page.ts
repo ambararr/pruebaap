@@ -15,6 +15,8 @@ export class RegisterPage implements OnInit {
   name:string | undefined;
   email:string | undefined;
   password: string | undefined;
+  confirmPassword: string | undefined;
+  passmatch!: boolean;
   
   constructor(
     private afs: AngularFirestore,
@@ -67,7 +69,13 @@ export class RegisterPage implements OnInit {
     }
   }//fin register
 
-
+checkpass(){
+  if(this.password==this.confirmPassword){
+    this.passmatch=true;
+  }else{
+    this.passmatch=false;
+  }
+}
   async toast(message: string,status: string){
     const toast = await this.toastr.create({
       message: message,

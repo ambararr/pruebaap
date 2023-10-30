@@ -22,8 +22,14 @@
         <ion-input placeholder="Password" required type="password" [(ngModel)]="password" name="password" clearInput="true"></ion-input>
       </ion-item>
 
+      <ion-item class="ion-margin">
+        <ion-input placeholder="Confirm Password" required type="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" clearInput="true" (ionChange)="checkpass()"></ion-input>
+        <ion-text *ngIf(password && !passmatch) color="danger">La constraseña no coincide!</ion-text>
+        <ion-text *ngIf(password && passmatch) color="succes">La constraseña coincide</ion-text>
+      </ion-item>
+
       <div align="right">
-        <ion-button shape="round" strong="true" class="ion-margin-end" color="plant" type="submit" (click)="register()">
+        <ion-button [disabled] shape="round" strong="true" class="ion-margin-end" color="plant" type="submit" (click)="register()">
           SIGN UP
           <ion-icon name="log-in" slot="end"></ion-icon>
   

@@ -1,5 +1,5 @@
 
-<ion-content [fullscreen]="true">
+<!--ion-content [fullscreen]="true">
   <div class="header">
     <ion-title class="title">
       Ingresa tu correo electronico
@@ -18,5 +18,32 @@
 
       </ion-button>
     </div>
+</ion-content-->
+
+<ion-content [fullscreen]="true">
+  <div id="bg">
+    <ion-fab vertical="bottom" edge horizontal="center" slot="fixed">
+      <ion-fab-button color="white" [routerLink]="['/login']">
+        <ion-icon name="close-outline" color="medium"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+  <form>      
+    <ion-list lines="none" class="ion-margin">
+      <ion-list-header >Cambiar de Contraseña</ion-list-header>
+      <ion-text >  Ingresa el email para cambiar la contraseña</ion-text>
+      <ion-item class="ion-margin">
+        <ion-input placeholder="Enter Email" type="email" [(ngModel)]="email" name="email" clearInput="true"></ion-input>
+      </ion-item>
+      <!--ion-text color="medium"><p class="ion-margin-horizontal"> <a [routerLink]="['/forgot-pass']"></a>Forgot Password?</p></ion-text-->
+      
+      <div align="right">
+        <ion-button shape="round" strong="true" class="ion-margin-end" color="plant" type="submit" (click)="resetpass()">
+          Send
+          <ion-icon name="log-in" slot="end"></ion-icon>
   
+        </ion-button>
+      </div>
+    </ion-list>
+  </form>
 </ion-content>

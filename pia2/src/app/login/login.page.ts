@@ -12,9 +12,9 @@ export class LoginPage implements OnInit {
   email!: string;
   password!: string;
 
-  toggleForm(formType: string) {
-    this.activeForm = formType;
-  }
+  //toggleForm(formType: string) {
+    //this.activeForm = formType;
+  //}
 
   constructor(
     private auth: AuthService,
@@ -27,6 +27,7 @@ export class LoginPage implements OnInit {
 login (){
 
     if(this.email && this.password){
+      
       this.auth.signIn(this.email,this.password)
     }else{
       this.toast('Introduce tu Email y Password...!!','warning');

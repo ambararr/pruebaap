@@ -42,9 +42,10 @@ user?: User ;
           return of(null);
         }
       })
-    )
+    );
   }//end constructor
 
+  
   async signIn(email: string, password: string) {
     const loading = await this.LoadingCtrl.create({
       message: 'Authenticating..',
@@ -61,7 +62,7 @@ user?: User ;
           this.afauth.signOut();
         } else {
           loading.dismiss();
-          this.router.navigate(['/home']);
+          this.router.navigate(['/tabs']);
         }
       }).catch(err => {
         loading.dismiss();
@@ -73,13 +74,12 @@ user?: User ;
     });
   }
 
-  async signOut(){
+  async signOut(){ 
     const loading= await this.LoadingCtrl.create({
       spinner: 'crescent',
       showBackdrop: true
     });
     loading.present();
-
     this.afauth.signOut()
     .then(()=> {
       loading.dismiss();
@@ -88,9 +88,7 @@ user?: User ;
     })
   }//fin sign out
 
-  async resetpass(){
-    
-  }
+  
 
   async toast(message: string,status: string | undefined){
     const toast= await this.toastr.create({
