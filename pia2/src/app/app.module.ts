@@ -19,6 +19,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { IonicSlides } from '@ionic/angular'; 
 
 import{ FormsModule} from '@angular/forms'
 
@@ -34,6 +35,7 @@ import { environment } from '../environments/environment'
 
 //AUTH SERVICE
 import {AuthService} from './service/auth.service'
+import { SpotifyService } from './service/spotify.service';
 
 //AUTH GUARD
 import {AuthGuard} from './guards/auth.guard'
@@ -41,6 +43,8 @@ import {AuthGuard} from './guards/auth.guard'
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+//
+import { HttpClient, HttpClientModule } from '@angular/common/http'
  
 @NgModule({
   declarations: [AppComponent, ],
@@ -48,6 +52,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,FormsModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
@@ -56,6 +61,7 @@ import { AppRoutingModule } from './app-routing.module';
   providers: [
     AuthService,
     AuthGuard,
+    SpotifyService,
     {  provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

@@ -1,17 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
+    <ion-title align="center">
+      Search Music
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-searchbar placeholder="Search Music" [(ngModel)]="campo"  type="text" (keyup.Enter)="buscar(campo)">
+    <!--input placeholder="Search Music" type="text" (keyup.Enter)="buscar()"></ionput-->
+  </ion-searchbar>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <div class="section">
+    <div class="mg">
+        <ion-card button="true"  *ngFor="let artista of artistas">
+        
+            <ion-img alt="" [src]="artista.images[0].url" ></ion-img>
+              <ion-card-header>
+                <ion-card-title>{{artista.name}}</ion-card-title>
+              </ion-card-header>
+        
+        </ion-card>
+    </div>
+  </div>
+
+  
 </ion-content>
+ 

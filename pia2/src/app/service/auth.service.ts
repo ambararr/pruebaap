@@ -83,6 +83,7 @@ user?: User ;
     this.afauth.signOut()
     .then(()=> {
       loading.dismiss();
+      localStorage.clear();
       this.router.navigate(['/login']);
 
     })

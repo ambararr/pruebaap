@@ -1,17 +1,44 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content>
+  <h2 class="section-header2" align="center" >TEMPO TUNES</h2>
+  <!--Something New-->
+  <div class="section">
+    <h2 class="section-header">Something New</h2>
+    <div class="mg">
+        <ion-card button="true"  *ngFor="let cancion of nuevasCanciones">
+        
+            <ion-img alt="" [src]="cancion.images[0].url" ></ion-img>
+              <ion-card-header>
+                <ion-card-title>{{cancion.name}}</ion-card-title>
+              </ion-card-header>
+        
+              <ion-card-content *ngFor="let artista of cancion.artists">
+                {{artista.name}}
+              </ion-card-content>
+        </ion-card>
+    </div>
+  </div>
+    
+
+    <!--Spanish-->
+
+    <div class="section">
+      <h2 class="section-header">Something in Spanish</h2>
+      <div class="mg">
+          <ion-card button="true"  *ngFor="let cancion of nuevasCanciones2">
+          
+              <ion-img alt="" [src]="cancion.images[0].url" ></ion-img>
+                <ion-card-header>
+                  <ion-card-title>{{cancion.name}}</ion-card-title>
+                </ion-card-header>
+          
+                <ion-card-content *ngFor="let artista of cancion.artists">
+                  {{artista.name}}
+                </ion-card-content>
+          </ion-card>
+      </div>
+    </div>
+    
 </ion-content>
+

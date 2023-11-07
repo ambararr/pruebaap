@@ -1,0 +1,38 @@
+.section {
+   
+    margin-bottom: 30px;
+   }
+
+   .mg {
+    display: flex; /* Utiliza flexbox para colocar las tarjetas una al lado de la otra */
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en filas si no caben en el ancho de la pantalla */
+    gap: 20px; /* Agrega espacio entre las tarjetas */
+  }
+/* Estilos específicos para tarjetas */
+ion-card {
+    width: calc(14% - 10px); /* Establece el ancho de las tarjetas al 50% del contenedor con espacio entre ellas */
+  }
+  
+ion-content{
+    --padding-top:40px;
+}
+.section-header2{
+    margin-bottom: 10px;
+    color:chartreuse;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    position: inherit;
+}
+
+
+.section-header{
+    margin-bottom: 10px;
+    color:#fff;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    position: inherit;
+}
